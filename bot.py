@@ -96,7 +96,7 @@ async def handle_format(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Текстовое резюме
     if fmt in ("fmt_text", "fmt_both"):
         text = generate_text_resume(data)
-        await query.message.reply_text(text, parse_mode="Markdown")
+        await query.message.reply_text(text)
 
     # PDF резюме
     if fmt in ("fmt_pdf", "fmt_both"):
