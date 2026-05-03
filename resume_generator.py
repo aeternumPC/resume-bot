@@ -79,7 +79,7 @@ def generate_text_resume(data: dict) -> str:
 {education}
 
 ━━━━━━━━━━━━━━━━━━━━
-_Создано с помощью @your_resume_helper_bot""".strip()
+_Создано с помощью @your_resume_helper_bot_""".strip()
 
 
 def generate_pdf(data: dict) -> str:
