@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Токен бота — вставь свой из @BotFather
-BOT_TOKEN = "8500425519:AAHMtt6oeN3MEyGMVETlI9EN9BABHtpoKvA"
+BOT_TOKEN = os.getenv("TOKEN")
 
 # Шаги анкеты
 (NAME, PROFESSION, EXPERIENCE, SKILLS, EDUCATION, CONTACTS, FORMAT) = range(7)
