@@ -17,6 +17,7 @@ logger = logging.getLogger(__name__)
 
 # Токен бота — вставь свой из @BotFather
 BOT_TOKEN = os.getenv("TOKEN")
+ADMIN_ID = 7655448052  
 
 # Шаги анкеты
 (NAME, PROFESSION, EXPERIENCE, SKILLS, EDUCATION, CONTACTS, FORMAT) = range(7)
@@ -31,6 +32,15 @@ QUESTIONS = {
 }
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user = update.message.from_user
+    try:
+        await context.bot.send_message(
+            chat_id=ADMIN_ID,
+            text=f"🆕 Новый пользователь!\n👤 {user.full_name}\n🔗 @{user.username or 'нет'}\n🆔 {user.id}"
+        )
+    except Exception:
+        pass
+
     await update.message.reply_text(
         "👋 Привет! Я помогу тебе создать *профессиональное резюме* за 2 минуты.\n\n"
         "Отвечай на вопросы — и получишь резюме в PDF и текстовом формате.\n\n"
